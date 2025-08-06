@@ -480,3 +480,145 @@
   color: #3a3a3a;
 }
 /* END NEW STYLES */
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.engine-controls {
+  background-color: #3c3f41;
+  border-radius: 10px;
+  padding: 15px;
+  text-align: center;
+}
+
+.engine-controls h3 {
+  margin: 0 0 15px 0;
+}
+
+.engine-controls button {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 5px;
+  border: none;
+  background-color: #28a745;
+  color: white;
+}
+
+.engine-move {
+  margin-top: 15px;
+  font-size: 16px;
+}
+
+.engine-move span {
+  font-weight: bold;
+  font-family: monospace;
+  font-size: 18px;
+  color: #61dafb;
+  background-color: #222;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+/* Add these styles to your App.css file */
+
+.board-container {
+  display: grid;
+  grid-template-areas: 
+    "rank board"
+    ".    file";
+  grid-template-columns: 30px 560px; /* Width of rank labels and board */
+  grid-template-rows: 560px 30px;    /* Height of board and file labels */
+  gap: 5px;
+}
+
+.board {
+  grid-area: board;
+  /* Board styles are already defined, no changes needed */
+}
+
+.rank-labels {
+  grid-area: rank;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.file-labels {
+  grid-area: file;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.label {
+  font-size: 14px;
+  font-weight: bold;
+  color: #aaa;
+}
+
+.multiplayer-section, .single-player-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  width: 100%;
+}
+
+.multiplayer-section h3, .single-player-section h3 {
+  margin: 0;
+  color: #61dafb;
+  font-weight: normal;
+}
+
+.single-player-section p {
+  margin: -5px 0 0 0;
+  font-size: 14px;
+  color: #ccc;
+}
+
+.lobby-divider {
+  height: 1px;
+  width: 90%;
+  background-color: #555;
+  margin: 10px 0;
+}
+
+.color-selection {
+  display: flex;
+  gap: 10px;
+  width: 100%;
+}
+
+/* Override the 100% width for buttons inside the color selection */
+.color-selection .lobby-button {
+  flex: 1; /* This makes both buttons take up equal space */
+}
+.move-history-list li {
+  display: grid;
+  /* Columns: 1. Move Number | 2. White's Move | 3. Black's Move */
+  grid-template-columns: 30px 1fr 1fr; 
+  gap: 10px;
+  padding: 4px 0;
+  border-bottom: 1px solid #555;
+}
+
+.move-history-list li:last-child {
+  border-bottom: none;
+}
+
+.move-number {
+  font-weight: bold;
+  color: #aaa;
+  text-align: right;
+}
+
+.move-notation {
+    font-family: monospace;
+    font-size: 15px;
+}
