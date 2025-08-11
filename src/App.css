@@ -622,3 +622,52 @@
     font-family: monospace;
     font-size: 15px;
 }
+
+/* --- Add these styles to your App.css file --- */
+
+/* This makes the board container a reference for the overlay's position */
+.board-container {
+  position: relative;
+  transition: opacity 0.3s ease;
+}
+
+/* When the AI is thinking, we can slightly fade the board */
+.board-container.thinking {
+  opacity: 0.8;
+  cursor: not-allowed;
+}
+
+/* The overlay itself */
+.thinking-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+  border-radius: 4px; /* Match your board's border-radius if it has one */
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+/* A simple CSS loading spinner */
+.spinner {
+  border: 4px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top: 4px solid #fff;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+  margin-bottom: 10px;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
